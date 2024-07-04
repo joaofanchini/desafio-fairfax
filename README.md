@@ -1,9 +1,5 @@
 Esse projeto está relacionado ao desafio proposto em: https://gitsrv.ntconsult.com.br/desafios-ntconsult/desafio-java-senior
 
-Com o prazo de 3 dias, indo até 04/07/2024 às 16 horas, eu não consegui completar o desafio. Deixo isso aqui registrado 
-apenas para caso eu faça alguma atualização no repositório, tenha como trackear até onde andou o exercício em relação à
-proposta de entrega.
-
 Dentre os critérios de avaliação o que ficou faltando foi o termino da consulta pela pesquisa de hoteis e 
 escrever os testes, assegurando o funcionamento completo do que fora implementado.
 
