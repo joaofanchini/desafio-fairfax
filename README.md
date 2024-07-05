@@ -14,6 +14,7 @@
 * Estratégia de logs.
 * Realizar testes de carga.
 * Conteinerizar a aplicação e orquestrar pelo Docker Compose.
+* Melhorar configurações do perfil de teste
 
 ##  Tecnologias utilizadas:
 * Spring Boot
