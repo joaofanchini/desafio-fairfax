@@ -3,9 +3,11 @@ package br.com.ntconsult.desafio_fairfax.service.impl;
 import br.com.ntconsult.desafio_fairfax.data.repositories.ReservationRepository;
 import br.com.ntconsult.desafio_fairfax.data.repositories.RoomRepository;
 import br.com.ntconsult.desafio_fairfax.domains.Reservation;
+import br.com.ntconsult.desafio_fairfax.domains.Reservation_;
 import br.com.ntconsult.desafio_fairfax.domains.Room;
 import br.com.ntconsult.desafio_fairfax.dtos.ReservationDto;
 import br.com.ntconsult.desafio_fairfax.enums.RoomStatus;
+import br.com.ntconsult.desafio_fairfax.exceptions.ResourceNotFoundException;
 import br.com.ntconsult.desafio_fairfax.requests.ReservationRequest;
 import br.com.ntconsult.desafio_fairfax.service.NotificationService;
 import br.com.ntconsult.desafio_fairfax.service.PaymentService;
@@ -49,7 +51,7 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public void doCheckIn(Integer reservationId) {
         Reservation reservation = reservationRepository.findById(reservationId)
-                .orElseThrow();
+                .orElseThrow(() -> new ResourceNotFoundException(Reservation.class, Reservation_.ID, reservationId));
         reservation.confirmCheckIn();
         reservationRepository.save(reservation);
     }
@@ -57,7 +59,7 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public void doCheckOut(Integer reservationId) {
         Reservation reservation = reservationRepository.findById(reservationId)
-                .orElseThrow();
+                .orElseThrow(() -> new ResourceNotFoundException(Reservation.class, Reservation_.ID, reservationId));
         reservation.confirmCheckOut();
         reservationRepository.save(reservation);
     }

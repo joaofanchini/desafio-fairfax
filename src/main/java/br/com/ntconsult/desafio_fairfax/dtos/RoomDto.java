@@ -2,13 +2,17 @@ package br.com.ntconsult.desafio_fairfax.dtos;
 
 import br.com.ntconsult.desafio_fairfax.domains.Room;
 import br.com.ntconsult.desafio_fairfax.enums.RoomStatus;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Getter
+@Data
+@NoArgsConstructor
 public class RoomDto {
     public RoomDto(Room room) {
         this.id = room.getId();
@@ -21,9 +25,9 @@ public class RoomDto {
                 .toList();
     }
 
-    private final Integer id;
-    private final RoomStatus status;
-    private final Integer maxGuests;
-    private final Double price;
-    private final List<FacilityDto> facilities;
+    private Integer id;
+    private RoomStatus status;
+    private Integer maxGuests;
+    private Double price;
+    private List<FacilityDto> facilities;
 }

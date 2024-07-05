@@ -1,13 +1,15 @@
 package br.com.ntconsult.desafio_fairfax.dtos;
 
 import br.com.ntconsult.desafio_fairfax.domains.Hotel;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Getter
+@Data
+@NoArgsConstructor
 public class HotelDto {
     public HotelDto(Hotel hotel) {
         this.id = hotel.getId();
@@ -21,8 +23,8 @@ public class HotelDto {
                 .toList();
     }
 
-    private final Integer id;
-    private final String name;
-    private final List<FacilityDto> facilities;
-    private final List<RoomDto> rooms;
+    private Integer id;
+    private String name;
+    private List<FacilityDto> facilities;
+    private List<RoomDto> rooms;
 }

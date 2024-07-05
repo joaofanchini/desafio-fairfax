@@ -23,4 +23,16 @@ public class GlobalHandlerException {
         );
         return new ResponseEntity<>(apiError, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<GlobalHandlerExceptionDto> handleIllegalArgumentException(IllegalArgumentException ex, WebRequest request) {
+        GlobalHandlerExceptionDto apiError = new GlobalHandlerExceptionDto(
+                LocalDateTime.now(),
+                HttpStatus.BAD_REQUEST.value(),
+                HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
+    }
 }

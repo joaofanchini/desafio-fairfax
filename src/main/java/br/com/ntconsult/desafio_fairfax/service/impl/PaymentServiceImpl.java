@@ -21,7 +21,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     @SneakyThrows
     public UUID doPayment(UUID preAuthorizeId) {
-        Thread.sleep(Duration.ofSeconds(5));
+//        Thread.sleep(Duration.ofSeconds(5));
         return UUID.randomUUID();
     }
 }

@@ -39,7 +39,7 @@ public class HotelServiceTest extends AbstractTest {
         when(hotelRepository.findById(hotelId)).thenReturn(Optional.of(hotelMock));
 
         // when
-        HotelDto dto = hotelService.getHotelDetails(hotelId);
+        HotelDto dto = hotelService.getHotel(hotelId);
 
         // then
         Assertions.assertThat(dto.getId()).isEqualTo(hotelMock.getId());
@@ -55,7 +55,7 @@ public class HotelServiceTest extends AbstractTest {
         when(hotelRepository.findById(hotelId)).thenReturn(Optional.empty());
 
         // when
-        ResourceNotFoundException resourceNotFoundException = Assertions.catchThrowableOfType(() -> hotelService.getHotelDetails(hotelId), ResourceNotFoundException.class);
+        ResourceNotFoundException resourceNotFoundException = Assertions.catchThrowableOfType(() -> hotelService.getHotel(hotelId), ResourceNotFoundException.class);
 
         // then
         Assertions.assertThat(resourceNotFoundException).isNotNull();

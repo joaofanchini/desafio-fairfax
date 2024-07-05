@@ -1,14 +1,16 @@
 package br.com.ntconsult.desafio_fairfax.dtos;
 
 import br.com.ntconsult.desafio_fairfax.domains.Reservation;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Getter
+@Data
+@NoArgsConstructor
 public class ReservationDto {
     public ReservationDto(Reservation reservation) {
         this.id = reservation.getId();
@@ -24,12 +26,12 @@ public class ReservationDto {
         this.confirmCheckOut = reservation.getConfirmCheckOut();
     }
 
-    private final Integer id;
-    private final String name;
-    private final String contact;
-    private final List<RoomDto> rooms;
-    private final LocalDate checkIn;
-    private final LocalDate checkOut;
-    private final Boolean confirmCheckIn;
-    private final Boolean confirmCheckOut;
+    private Integer id;
+    private String name;
+    private String contact;
+    private List<RoomDto> rooms;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
+    private Boolean confirmCheckIn;
+    private Boolean confirmCheckOut;
 }

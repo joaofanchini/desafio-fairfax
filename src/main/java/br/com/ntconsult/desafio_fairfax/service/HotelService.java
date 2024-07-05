@@ -14,5 +14,5 @@ public interface HotelService {
                              @Nullable Integer numberOfGuests,
                              Pageable pageable);
 
-    HotelDto getHotelDetails(Integer hotelId);
+    HotelDto getHotel(Integer hotelId);
 }

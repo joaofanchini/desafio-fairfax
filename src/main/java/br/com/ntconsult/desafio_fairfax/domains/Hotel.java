@@ -23,6 +23,7 @@ public class Hotel {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ToString.Include
     private Integer id;
 

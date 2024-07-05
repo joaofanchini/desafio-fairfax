@@ -34,7 +34,7 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public HotelDto getHotelDetails(Integer hotelId) {
+    public HotelDto getHotel(Integer hotelId) {
         return hotelRepository.findById(hotelId)
                 .map(HotelDto::new)
                 .orElseThrow(() -> new ResourceNotFoundException(Hotel.class, Hotel_.ID, hotelId));
