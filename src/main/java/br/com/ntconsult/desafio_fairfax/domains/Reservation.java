@@ -37,7 +37,7 @@ public class Reservation {
     private Integer id;
 
     @ManyToMany(cascade = CascadeType.MERGE)
-    @JoinTable(name = "reservations_rooms",
+    @JoinTable(name = "reservation_rooms",
             joinColumns = @JoinColumn(name = "reservation_id"),
             inverseJoinColumns = @JoinColumn(name = "room_id"))
     @NotEmpty

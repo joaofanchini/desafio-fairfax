@@ -8,6 +8,7 @@ import br.com.ntconsult.desafio_fairfax.dtos.HotelDto;
 import br.com.ntconsult.desafio_fairfax.exceptions.ResourceNotFoundException;
 import br.com.ntconsult.desafio_fairfax.service.HotelService;
 import jakarta.annotation.Nullable;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class HotelServiceImpl implements HotelService {
 
