@@ -12,7 +12,9 @@ import java.util.UUID;
 public class PaymentServiceImpl implements PaymentService {
     @Override
     public UUID preAuthorizePayment(String cardNumber) {
-        assert Objects.nonNull(cardNumber);
+        if (Objects.isNull(cardNumber)) {
+            throw new IllegalArgumentException();
+        }
         return UUID.randomUUID();
     }
 

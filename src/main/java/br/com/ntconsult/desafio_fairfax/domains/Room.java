@@ -4,6 +4,7 @@ import br.com.ntconsult.desafio_fairfax.enums.RoomStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -14,7 +15,15 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 public class Room {
+    public Room(Hotel hotel, Integer maxGuests, Double price, RoomStatus status) {
+        this.hotel = hotel;
+        this.maxGuests = maxGuests;
+        this.price = price;
+        this.status = status;
+    }
+
     @Id
     private Integer id;
 

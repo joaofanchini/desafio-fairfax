@@ -3,6 +3,7 @@ package br.com.ntconsult.desafio_fairfax.domains;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -13,7 +14,14 @@ import java.util.List;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true)
+@NoArgsConstructor
 public class Hotel {
+
+    public Hotel(String name, String location) {
+        this.name = name;
+        this.location = location;
+    }
+
     @Id
     @ToString.Include
     private Integer id;

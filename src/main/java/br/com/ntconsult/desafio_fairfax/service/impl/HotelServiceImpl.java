@@ -2,7 +2,10 @@ package br.com.ntconsult.desafio_fairfax.service.impl;
 
 import br.com.ntconsult.desafio_fairfax.data.repositories.HotelRepository;
 import br.com.ntconsult.desafio_fairfax.data.specifications.HotelSpecification;
+import br.com.ntconsult.desafio_fairfax.domains.Hotel;
+import br.com.ntconsult.desafio_fairfax.domains.Hotel_;
 import br.com.ntconsult.desafio_fairfax.dtos.HotelDto;
+import br.com.ntconsult.desafio_fairfax.exceptions.ResourceNotFoundException;
 import br.com.ntconsult.desafio_fairfax.service.HotelService;
 import jakarta.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +35,6 @@ public class HotelServiceImpl implements HotelService {
     public HotelDto getHotelDetails(Integer hotelId) {
         return hotelRepository.findById(hotelId)
                 .map(HotelDto::new)
-                .orElseThrow();
+                .orElseThrow(() -> new ResourceNotFoundException(Hotel.class, Hotel_.ID, hotelId));
     }
 }

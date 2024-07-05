@@ -19,6 +19,7 @@ Próximos passos:
 * Permitir a orquestração dela com o docker-compose para facilitar validação do sistema.
 * Analisar métricas no Spring Boot Admin e verificar se será necessário separar o serviço em serviços menores, visando 
 * proporcionar uma maior escalabilidade do sistema.
+* Realizar testes de carga
 
 Idéias que gostaria de ter implementado:
 * Contruir o sistema utilizando a arquitetura baseada em microserviços.
